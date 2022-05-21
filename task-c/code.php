@@ -43,35 +43,18 @@
 
     class Counter {
 
-        private $a;
-        private $n;
         private $count;
         
          // Initiate Class
         function __construct($i = 0) {
 
-            $this->a = 0;           
-            $this->n = $i;          // gets default value for class parameter
             $this->count = $i;      // current value set to default value
             
         }
 
         function count($j = 1) {
 
-            // Keep track of count
-            $this->a++;
-
-            // At first iteration, only add the default values of the paramenter in the class and count method
-            if($this->a == 1) { $this->count = $this->n + $j; }
-
-            // Subsequent iterations, set the value of the parameter in the class to 0
-            // and add the default value of the paramenter in the count method
-            else {
-                
-                $this->n = 0;
-                $this->count += $this->n + $j;
-
-            }
+            $this->count += $j;
 
         }
 
@@ -83,7 +66,6 @@
 
         function reset() {
 
-            $this->n = 0;
             $this->count = 0;
 
         }
